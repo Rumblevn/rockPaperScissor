@@ -1,5 +1,4 @@
-// console.log("helloe worldddd");
-
+alert("You will now play 5 rounds of Rock Paper Scissors with the computer.");
 game();
 
 function game() {
