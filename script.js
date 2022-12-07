@@ -10,11 +10,11 @@ function game() {
     var tempScore;
 
     for (let index = 0; index < 5; index++) {
-        // humanHand = prompt("Round " + (index+1) + " ,state your hand:").toLowerCase;
-        humanHand = "rock";
+        console.log("round: " + index);
+        humanHand = prompt("Round " + (index+1) + ", state your hand:").toLowerCase();
+        // humanHand = "rock"; //for fast debugging
         computerHand = getComputerChoice();
         tempScore = playRound(humanHand, computerHand);
-        console.log(tempScore);
 
         if (tempScore == -1) {
             computerScore++;
@@ -32,7 +32,7 @@ function game() {
 
 function playRound(playerChoice, computerChoice) {
     // return 0 for draw, -1 for computer win, 1 for human win
-    var score = 5;
+    var score;
     console.log("playerChoice: " + playerChoice);
     console.log("computerChoice: " + computerChoice);
     if (playerChoice === computerChoice) {
@@ -49,6 +49,8 @@ function playRound(playerChoice, computerChoice) {
         if (computerChoice === "rock") {
             score = -1;
         } else score = 1;
+    } else {
+        console.log("Invalid input, no score added");
     }
     // console.log("score: " + score);
     return score;
@@ -60,7 +62,7 @@ function announceResult(computerScore, humanScore) {
     } else if(computerScore < humanScore) {
         alert("human won! " + computerScore + " - " + humanScore);
     } else {
-        alert("Its a draw!")
+        alert("Its a draw! " + computerScore + " - " + humanScore)
     }
     console.log("Final score: " + computerScore + " - " + humanScore);
 }
