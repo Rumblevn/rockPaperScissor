@@ -15,6 +15,7 @@ function game() {
         computerHand = getComputerChoice();
         tempScore = playRound(humanHand, computerHand);
         console.log(tempScore);
+
         if (tempScore == -1) {
             computerScore++;
             console.log("at round " + (index+1) + " : computer win" );
@@ -24,9 +25,8 @@ function game() {
         } else {
             console.log("at round " + (index+1) + " draw")
         }
-        
     }
-
+    announceResult(computerScore, humanScore);
 
 }
 
@@ -52,6 +52,17 @@ function playRound(playerChoice, computerChoice) {
     }
     // console.log("score: " + score);
     return score;
+}
+
+function announceResult(computerScore, humanScore) {
+    if (computerScore > humanScore) {
+        alert("computer won! " + computerScore + " - " + humanScore);
+    } else if(computerScore < humanScore) {
+        alert("human won! " + computerScore + " - " + humanScore);
+    } else {
+        alert("Its a draw!")
+    }
+    console.log("Final score: " + computerScore + " - " + humanScore);
 }
 
 function getComputerChoice() {
