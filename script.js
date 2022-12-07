@@ -1,16 +1,5 @@
 // console.log("helloe worldddd");
 
-
-
-var playerSelection = "ROCk";
-playerSelection = playerSelection.toLowerCase();
-
-console.log(playerSelection);
-console.log(getComputerChoice());
-
-
-
-
 function game() {
     var humanScore = 0;
     var computerScore = 0;
@@ -27,7 +16,7 @@ function game() {
 }
 
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice) {
+    if (playerChoice === ) {
         
     }
 
